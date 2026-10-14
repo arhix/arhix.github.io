@@ -12,36 +12,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     
     <style>
+        :root{
+            --bg:#072a14;
+            --text:#e8f5e9;
+        }
+
         body {
-            /* Clean, bold sans-serif font */
             font-family: 'Inter', sans-serif;
-            /* Dark green background */
-            background-color: #0b2e13; 
-            /* Very light green text color */
-            color: #e8f5e9; 
+            background-color: var(--bg); 
+            color: var(--text);
             margin: 0;
-            overflow: hidden; /* Prevent scrolling since it's a centered placeholder */
+            overflow: hidden;
         }
 
         .hero-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Small gap between "GO" and the stacked text */
             gap: 1.5vw; 
-            /* Add a subtle drop shadow for depth */
             text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        /* Responsive typography using viewport width (vw) units 
-           so it scales perfectly on all devices */
         .text-go {
-            /* Gigantic text */
+            font-weight:900;
             font-size: 28vw;
-            /* Tight line height to align properly with the stacked text */
             line-height: 0.77;
             letter-spacing: -0.04em;
-            margin-top: -2vw; /* Optical alignment adjustment */
+            margin-top: 2vw;
         }
 
         .text-stacked-container {
@@ -51,36 +48,29 @@
         }
 
         .text-stacked {
-            /* Exactly half the size of "GO" (14vw is half of 28vw) */
+            font-weight:800;
             font-size: 14vw;
             line-height: 0.77;
             letter-spacing: -0.04em;
         }
 
-        /* Cap the maximum size for very large desktop screens to prevent it from getting too massive */
         @media (min-width: 1440px) {
             .hero-container { gap: 24px; }
-            .text-go { font-size: 400px; margin-top: -24px; }
+            .text-go { font-size: 400px; }
             .text-stacked { font-size: 200px; }
         }
         
-        /* Adjustments for mobile screens to ensure it fits the width */
         @media (max-width: 600px) {
             .hero-container { gap: 3vw; }
-            .text-go { font-size: 40vw; margin-top: -2vw; }
+            .text-go { font-size: 40vw; }
             .text-stacked { font-size: 20vw; }
         }
     </style>
 </head>
 <body class="min-h-screen w-full flex items-center justify-center select-none">
-    
+
     <main class="hero-container">
-        <!-- Gigantic 'GO' -->
-        <div class="text-go uppercase">
-            GO
-        </div>
-        
-        <!-- Stacked 'touch grass' -->
+        <div class="text-go uppercase">GO</div>
         <div class="text-stacked-container">
             <div class="text-stacked lowercase">touch</div>
             <div class="text-stacked lowercase">grass</div>
